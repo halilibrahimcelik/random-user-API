@@ -11,7 +11,7 @@ const Card = (props) => {
     <>
 <section>
 
-<div className="card" style={{ width: "20rem" }}>
+<div className={`card  ${styles.cardContainer}`} >
   <div className={styles.header1} >
     <img className="card-img-top" src={picture.large}  alt={name} style={{ width: "40%" }}/>
       <div className="title">
@@ -28,8 +28,8 @@ const Card = (props) => {
   </div>
   <ul className="list-group list-group-flush">
     <li className="list-group-item">Registered Date: {(new Date(registered.date).toLocaleDateString())} </li>
-    <li className="list-group-item">Registered Age:{registered.age} </li>
-    <li className="list-group-item">Vestibulum at eros</li>
+    <li className="list-group-item">Membership year:{registered.age} </li>
+
   </ul>
   <div className="card-body">
    <button className="btn btn-success" onClick={()=>{changeUser((prev)=>!prev)}}>Change User </button>

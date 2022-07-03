@@ -1,3 +1,9 @@
+.cardContainer{
+    width: 20rem;
+    box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.5);
+ 
+}
+
 .header1{
     display: grid;
     grid-template-columns:repeat(2, 20% 80%);

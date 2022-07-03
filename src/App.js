@@ -2,8 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card/Card";
+import Wrapper from "./components/UI/Wrapper";
 function App() {
   const [initialData, setData] = useState();
+  const [changeUser, setChangeUser] = useState(false);
   const url = "https://randomuser.me/api/";
   const getData = async () => {
     try {
@@ -18,8 +20,12 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, []);
-  return <div className="App">{initialData && <Card {...initialData} />}</div>;
+  }, [changeUser]);
+  return (
+    <div className="App">
+      {initialData && <Wrapper {...initialData} changeUser={setChangeUser} />}
+    </div>
+  );
 }
 
 export default App;

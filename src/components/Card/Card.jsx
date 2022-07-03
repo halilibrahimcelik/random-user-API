@@ -1,20 +1,29 @@
 import React from 'react'
- import styles from "./card.module.scss"
+ import styles from "./card.module.scss";
+ import { FaMailBulk ,FaPhone} from 'react-icons/fa';
+ import {GrMapLocation} from 'react-icons/gr';
 const Card = (props) => {
   console.log("props", props);
-  const {name,location,phone,email,picture,dob,registered}=props;
-  console.log(phone,email,picture.thumbnail,name)
+  const {name,location,phone,email,picture,dob,registered,changeUser}=props;
+  console.log(name)
+  console.log(props.changeUser)
   return (
     <>
 <section>
 
-<div className="card" style={{ width: "18rem" }}>
-  <img className="card-img-top " src={picture.large}  alt={name} />
+<div className="card" style={{ width: "20rem" }}>
+  <div className={styles.header1} >
+    <img className="card-img-top" src={picture.large}  alt={name} style={{ width: "40%" }}/>
+      <div className="title">
+        <h5 className="card-title"  >{name.title}  </h5>
+        <h6 > {name.first} {name.last}</h6>
+      </div>
+  </div>
   <div className="card-body">
-    <h5 className="card-title">2323 </h5>
     <p className="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+   <p className="cart-text">  <FaMailBulk/>  {email} </p>
+  <p className="cart-text"><FaPhone/> {phone} </p>
+  <p className="cart-text"> <GrMapLocation/> {location.country} {location.city} </p>
     </p>
   </div>
   <ul className="list-group list-group-flush">
@@ -23,7 +32,7 @@ const Card = (props) => {
     <li className="list-group-item">Vestibulum at eros</li>
   </ul>
   <div className="card-body">
-   
+   <button className="btn btn-success" onClick={()=>{changeUser((prev)=>!prev)}}>Change User </button>
   </div>
 </div>
 </section>

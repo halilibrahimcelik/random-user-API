@@ -1,3 +1,12 @@
-img{
-    width: 40%;
+.header1{
+    display: grid;
+    grid-template-columns:repeat(2, 20% 80%);
+ align-items: center;
+
+ padding:1rem;
+    img{
+        width: 100px !important;
+        border-radius: 50%;
+        box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.5);
+    }
 }
